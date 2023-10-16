@@ -29,14 +29,14 @@ jobs:
           Aws-region: "us-east-1"
 
       
-      # - name: terraform init  
-      #   run: 
-      #     terraform init -reconfigure 
+      - name: terraform init  
+        run: 
+          terraform init -reconfigure 
       
-      # - name: terraform apply
-      #   run:
-      #     terraform apply -auto-approve
-
-      - name: echo
+      - name: terraform apply
         run:
-          echo "$aws-access-key-id"
+          terraform apply -auto-approve
+
+      # - name: echo
+      #   run:
+      #     echo "$aws-access-key-id"
