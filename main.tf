@@ -8,6 +8,9 @@ resource "aws_instance" "Ec2"{
   instance_type = var.instance_type
 
   tags = {
-    Name = "suraj Ec2"
+    Name = "Suraj-ec2"
+  }
+  volume_tags = {
+    Name = "Suraj-ec2"
   }
 }
