@@ -4,6 +4,7 @@ name: caller-workflow
 
 on:
   workflow_call:
+  workflow_dispatch:
   
 jobs:
   terraform_plan:
