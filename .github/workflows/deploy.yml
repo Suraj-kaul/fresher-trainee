@@ -36,3 +36,7 @@ jobs:
       - name: terraform apply
         run:
           terraform apply -auto-approve
+
+      - name: echo
+        run:
+          echo ${{secrets.AWS_ACCESS_KEY_ID}}
