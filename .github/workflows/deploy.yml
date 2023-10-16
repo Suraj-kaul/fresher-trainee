@@ -39,4 +39,4 @@ jobs:
 
       - name: echo
         run:
-          echo ${{secrets.AWS_ACCESS_KEY_ID}}
+          echo "$aws-access-key-id"
