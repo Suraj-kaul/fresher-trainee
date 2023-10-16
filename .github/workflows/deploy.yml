@@ -29,11 +29,9 @@ jobs:
 
       
       - name: terraform init  
-        run: |
-          cd example
-          terraform init -reconfigure -backend-config="bucket=${{env.BUCKET}}" -backend-config="key=${{env.TFSTATE_FILE}}"
+        run: 
+          terraform init -reconfigure 
       
-      - name: terraform destroy
-        run: |
-          cd example
-          terraform destroy -auto-approve
+      - name: terraform apply
+        run:
+          terraform apply -auto-approve
