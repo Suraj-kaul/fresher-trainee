@@ -3,9 +3,9 @@ on:
   workflow_call:
     inputs:
       role:
-      description: 'role arn'     
-      required: true
-      type: string
+        description: 'role arn'     
+        required: true
+        type: string
   
 jobs:
   terraform_plan:
