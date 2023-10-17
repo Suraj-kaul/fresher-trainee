@@ -23,12 +23,12 @@ jobs:
         with:
           terraform_version: 1.1.7
       
-      - name: Configure AWS credentials from Test account
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::528519205020:role/pinkesh-TU
-          role-session-name: Github
-          aws-region: us-east-1
+      # - name: Configure AWS credentials from Test account
+      #   uses: aws-actions/configure-aws-credentials@v4
+      #   with:
+      #     role-to-assume: arn:aws:iam::528519205020:role/pinkesh-TU
+      #     role-session-name: Github
+      #     aws-region: us-east-1
       
       - name: terraform init  
         run: 
