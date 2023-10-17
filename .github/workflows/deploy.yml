@@ -27,6 +27,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::528519205020:role/pinkesh-TU
+          role-session-name: Github
           aws-region: us-east-1
       
       - name: terraform init  
