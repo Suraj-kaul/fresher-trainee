@@ -1,15 +1,11 @@
-# This is a basic workflow to help you get started with Actions
-
 name: caller-workflow
-
 on:
   workflow_call:
-     inputs:
-       role:
-       description: 'role arn'     
-       required: true
-       type: string
-  workflow_dispatch:
+    inputs:
+      role:
+      description: 'role arn'     
+      required: true
+      type: string
   
 jobs:
   terraform_plan:
