@@ -26,6 +26,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          java --version
           
   # This workflow contains a single job called "build"
   job2:
