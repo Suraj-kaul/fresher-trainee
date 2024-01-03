@@ -47,3 +47,10 @@ jobs:
         with:
           entrypoint: /bin/cat
           args: /etc/os-release
+  build:
+      runs-on: arc-runner-suraj
+      steps:
+       - name: Run inside container
+         run: |
+          echo $PATH 
+          node --version 
