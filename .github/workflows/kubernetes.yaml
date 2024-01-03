@@ -1,0 +1,49 @@
+# name: containerizedjob
+# on:
+#   workflow_dispatch
+# jobs:
+#   container-test-job:
+#     runs-on: aakash-eks-runner
+#     container: 
+#       image: node:18
+#       env:
+#         NODE_ENV: development
+#       ports:
+#         - 80
+#       volumes:
+#         - my_docker_volume:/volume_mount
+#       options: --cpus 1
+#     steps:
+#       - name: Check for dockerenv file
+#         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+#       - name: Check node version
+#         run: |
+#           node --version
+#           npm --version
+name: DockerinDocker job
+ 
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+ 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  container:
+    # The type of runner that the job will run on
+    runs-on: arc-runner-suraj
+    # runs-on: gatr-eks-runner
+    container:
+      image: node:14.15.0-alpine3.12
+ 
+    steps:
+      - name: Run inside container
+        run: |
+          node -v
+          cat /etc/os-release 
+      - name: Use another container
+        uses: docker://node:12.14.1
+        with:
+          entrypoint: /bin/cat
+          args: /etc/os-release
